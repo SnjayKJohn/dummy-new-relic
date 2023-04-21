@@ -2,10 +2,10 @@
   <v-container fluid fill-height>
     <v-layout align-center justify-center>
       <v-flex xs12 sm8 md4>
-        <v-form fast-fail @submit.prevent="login">
+        <v-form fast-fail @submit.prevent="login" v-model="valid">
           <v-card class="elevation-12">
             <v-toolbar dark color="primary">
-              <v-toolbar-title>Login form</v-toolbar-title>
+              <v-toolbar-title>JUMiNGO</v-toolbar-title>
             </v-toolbar>
             <v-card-text>
               <v-text-field
@@ -28,7 +28,7 @@
             </v-card-text>
             <v-card-actions>
               <v-spacer></v-spacer>
-              <v-btn color="primary" type="submit" :loading="loader" 
+              <v-btn color="primary" type="submit" :loading="loader" :disabled="!valid"
                 >Login</v-btn
               >
             </v-card-actions>
@@ -46,6 +46,7 @@ export default {
   data() {
     return {
       loader: false,
+      valid: false,
       userName: '',
       userNameRules: [
         (value) => {

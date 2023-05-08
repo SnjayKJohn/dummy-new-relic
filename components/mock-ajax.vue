@@ -1,5 +1,5 @@
 <template>
-  <v-card width="1000" >
+  <v-card width="1000">
     <v-card-title> Mock Ajax from {{ page }}</v-card-title>
     <v-card-text>
       <v-expansion-panels v-model="panel" variant="popout" class="my-4">
@@ -81,6 +81,46 @@ export default {
               importProgressStatus: ['checkout', 'buy_in_progress'],
               outputPropertyFilter: ['uuid'],
             },
+          },
+        },
+        {
+          url: 'addresses/share',
+          type: 'post',
+          payload: { addressIds: [514299], sharing: true },
+        },
+        // {
+        //   url: 'support/sections/9/topics/96',
+        //   type: 'post',
+        //   payload: { addressIds: [514299], sharing: false },
+        // },
+        {
+          url: 'users/pmotional-stop',
+          type: 'patch',
+          payload: { promotional_stop: 1 },
+        },
+        {
+          url: 'addresses/514305/copy',
+          type: 'put',
+          payload: {},
+        },
+        {
+          url: 'addresses/518515',
+          type: 'put',
+          payload: {
+            id: 518515,
+            company: 'Test Änderung Test3',
+            name: 'wwee',
+            street: 'Tanzstraße 12',
+            street2: 'Zusatz',
+            zip: '37574',
+            city: 'Musterstadt',
+            state: null,
+            country: 'DE',
+            phone: null,
+            settings: null,
+            isDefault: false,
+            deactivated: true,
+            type: 6,
           },
         },
       ],
